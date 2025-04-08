@@ -40,6 +40,7 @@ interface Chapter {
   pages: string[];
   comments: Comment[]; // Add this line assuming comments is an array of Comment objects
   views: number;
+  shares: number;
 }
 
 // Define the type for the Firestore context
@@ -49,6 +50,8 @@ interface FirestoreContextType {
   getCurrentChapter: (id: number) => Chapter | undefined;
   getViews: (id: number) => number | undefined;
   updateViews: (id: number) => Promise<void>;
+  getShares: (id: number) => number | undefined;
+  updateShares: (id: number) => Promise<void>;
 }
 
 interface FirestoreContextProviderProps {
@@ -130,6 +133,39 @@ export const FirestoreContextProvider: React.FC<
     }
   };
 
+  const getShares = (id: number): number | undefined => {
+    const chapter = getCurrentChapter(id);
+    if (chapter) {
+      return Number(chapter.shares);
+    }
+  };
+
+  const updateShares = async (id: number) => {
+    const chapterId = await getFirebaseDocumentId("Chapters", "id", id);
+    const chapterRef = doc(db, "Chapters", chapterId!.toString());
+    const chapterDoc = await getDoc(chapterRef);
+
+    console.log(`Updating shares for chapter ${id}`);
+
+    if (chapterDoc.exists()) {
+      const currentShares = chapterDoc.data().shares || 0;
+      await updateDoc(chapterRef, { shares: currentShares + 1 });
+
+      // Update the local state
+      setChapters((prevChapters) =>
+        prevChapters.map((chapter) =>
+          chapter.id === id.toString()
+            ? { ...chapter, shares: currentShares + 1 }
+            : chapter
+        )
+      );
+
+      console.log(`Updated shares for chapter ${id}: ${currentShares + 1}`);
+    } else {
+      console.log(`Chapter ${id} does not exist in the database.`);
+    }
+  };
+
   return (
     <FirestoreContext.Provider
       value={{
@@ -138,6 +174,8 @@ export const FirestoreContextProvider: React.FC<
         getCurrentChapter,
         getViews,
         updateViews,
+        getShares,
+        updateShares,
       }}
     >
       {children}

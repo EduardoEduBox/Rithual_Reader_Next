@@ -3,6 +3,7 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import { useLikes } from "@/app/Context/LikesContext";
 import { UseAuth } from "@/app/Context/AuthContext";
 import LogInWarningModal from "./LogInWarningModal";
+import { formatNumber } from "@/app/Components/utils/numberFormatter";
 
 interface LikeButtonProps {
   id: number;
@@ -16,7 +17,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ id }) => {
   const userLikes = likes[id] || [];
   const email = user?.email;
   const isLiked = userLikes.includes(email || "");
-  const likeCount = userLikes.length;
+  const likeCount = formatNumber(userLikes.length);
   const isLikeLoading = likeLoadingStates[id];
 
   const handleLikeClick = async () => {

@@ -13,9 +13,9 @@ const ViewsButton: React.FC<ViewsButtonProps> = ({ id }) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <button className="h-[calc(100%+3px)] items-center justify-center">
+      <div className="h-[calc(100%+3px)] items-center justify-center">
         <IoEyeOutline className="cursor-pointer h-full" />
-      </button>
+      </div>
       <p>{views}</p>
     </div>
   );

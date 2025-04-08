@@ -192,12 +192,6 @@ const HomeLoading: React.FC = () => {
                 Versão de desktop
               </li>
               <li
-                ref={(el) => (infoRefs.current[2] = el!)}
-                className="text-shadow"
-              >
-                Número de compartilhamentos dos capítulos
-              </li>
-              <li
                 ref={(el) => (infoRefs.current[3] = el!)}
                 className="text-shadow"
               >
