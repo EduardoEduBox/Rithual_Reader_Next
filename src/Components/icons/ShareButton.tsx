@@ -1,6 +1,6 @@
 import React from "react";
 import { PiShareFat } from "react-icons/pi";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import { formatNumber } from "../utils/numberFormatter";
 
 type ShareButtonProps = {

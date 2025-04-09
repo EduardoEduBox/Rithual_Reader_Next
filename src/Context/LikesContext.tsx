@@ -2,16 +2,16 @@
 
 import React, {
   createContext,
-  useContext,
-  useState,
-  useEffect,
   ReactNode,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/app/firebase";
-import { UseAuth } from "@/app/Context/AuthContext";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import getFirebaseDocumentId from "../Components/FirebaseDocumentId";
+import { UseAuth } from "./AuthContext";
+import { UseFirestore } from "./FirestoreContext";
 
 interface LikesContextType {
   likes: { [key: number]: string[] };

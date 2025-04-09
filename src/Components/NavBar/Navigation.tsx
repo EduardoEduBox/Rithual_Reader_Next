@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 
 const Navigation = ({
   tracker,

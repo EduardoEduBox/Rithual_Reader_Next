@@ -2,18 +2,18 @@
 
 import React, {
   createContext,
-  useContext,
-  useState,
-  useEffect,
   ReactNode,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
-import { db } from "../firebase";
+import { db } from "@/app/firebase";
 import {
   collection,
-  getDocs,
   doc,
-  updateDoc,
   getDoc,
+  getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import getFirebaseDocumentId from "../Components/FirebaseDocumentId";
 
@@ -59,7 +59,7 @@ interface FirestoreContextProviderProps {
 }
 
 const FirestoreContext = createContext<FirestoreContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const FirestoreContextProvider: React.FC<
@@ -123,8 +123,8 @@ export const FirestoreContextProvider: React.FC<
         prevChapters.map((chapter) =>
           chapter.id === id.toString()
             ? { ...chapter, views: currentViews + 1 }
-            : chapter
-        )
+            : chapter,
+        ),
       );
 
       console.log(`Updated views for chapter ${id}: ${currentViews + 1}`);
@@ -156,8 +156,8 @@ export const FirestoreContextProvider: React.FC<
         prevChapters.map((chapter) =>
           chapter.id === id.toString()
             ? { ...chapter, shares: currentShares + 1 }
-            : chapter
-        )
+            : chapter,
+        ),
       );
 
       console.log(`Updated shares for chapter ${id}: ${currentShares + 1}`);
@@ -187,7 +187,7 @@ export const UseFirestore = (): FirestoreContextType => {
   const context = useContext(FirestoreContext);
   if (!context) {
     throw new Error(
-      "useFirestore must be used within a FirestoreContextProvider"
+      "useFirestore must be used within a FirestoreContextProvider",
     );
   }
   return context;

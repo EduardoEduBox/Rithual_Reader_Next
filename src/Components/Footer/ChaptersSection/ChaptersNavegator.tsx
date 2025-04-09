@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChaptersSectionProps } from ".";
 import Image from "next/image";
 
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import ViewsButton from "../../icons/ViewsButton";
 
 const ChaptersNavegator: React.FC<ChaptersSectionProps> = ({

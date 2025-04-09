@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 interface FirstTimeContextType {
   isFirstTime: boolean;
@@ -8,7 +8,7 @@ interface FirstTimeContextType {
 }
 
 const FirstTimeContext = createContext<FirstTimeContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export const FirstTimeContextProvider: React.FC<{ children: ReactNode }> = ({

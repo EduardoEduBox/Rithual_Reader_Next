@@ -1,0 +1,49 @@
+.navUl {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  margin-top: 5vh;
+  font-size: 1.2rem;
+}
+
+.navUl li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navUl li::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  opacity: 70%;
+  transition: width 0.3s ease-in-out;
+}
+
+.navUl li:hover::before {
+  width: 100%;
+  opacity: 70%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+}
+
+.navUl li:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.MainBehindText {
+  text-shadow:
+    1px 0 rgb(255, 223, 239),
+    0px 0 rgb(255, 223, 239),
+    0 0px rgb(255, 223, 239),
+    0 -1px rgb(255, 223, 239),
+    1px 0px rgb(255, 223, 239),
+    0px 0px rgb(255, 223, 239),
+    -1px -1px #fff,
+    -1px 1px rgb(255, 223, 239);
+}

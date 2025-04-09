@@ -1,6 +1,6 @@
 import React from "react";
-import { MdArrowBack } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
+import { MdArrowBack } from "react-icons/md";
 
 const Loading = () => {
   return (

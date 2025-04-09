@@ -1,8 +1,8 @@
 // later on we'll make this the home page of our application
 
-import BottomInformation from "./Components/HomePage/BottomInformation";
-import Language from "./Components/HomePage/Language";
-import UserInfo from "./Components/HomePage/UserInfo";
+import BottomInformation from "@/Components/HomePage/BottomInformation";
+import Language from "@/Components/HomePage/Language";
+import UserInfo from "@/Components/HomePage/UserInfo";
 import HomeLoading from "./HomeLoading";
 
 export default function Home() {

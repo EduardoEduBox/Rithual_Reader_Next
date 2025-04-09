@@ -1,8 +1,8 @@
 "use client";
 
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 import { MdSend } from "react-icons/md";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import { Timestamp, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { db } from "@/app/firebase";
@@ -10,7 +10,7 @@ import { useState } from "react";
 import getFirebaseDocumentId from "../FirebaseDocumentId";
 
 const Input = ({ id }: { id: number }) => {
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
   const { user } = UseAuth();
 
   const sendMessage = async () => {
@@ -27,14 +27,14 @@ const Input = ({ id }: { id: number }) => {
       profilePic: user!.photoURL,
       timePosted: createdAt,
       username: user!.displayName,
-      edited: false
-    }
+      edited: false,
+    };
 
-    let chapterId = await getFirebaseDocumentId('Chapters', 'id', id);
+    let chapterId = await getFirebaseDocumentId("Chapters", "id", id);
     const chapterRef = doc(db, "Chapters", chapterId!.toString());
 
     await updateDoc(chapterRef, {
-      comments: arrayUnion(newComment)
+      comments: arrayUnion(newComment),
     });
 
     // Terminar tratamento...

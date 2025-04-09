@@ -1,6 +1,6 @@
 import React from "react";
 import { IoEyeOutline } from "react-icons/io5";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import { formatNumber } from "../utils/numberFormatter";
 
 type ViewsButtonProps = {

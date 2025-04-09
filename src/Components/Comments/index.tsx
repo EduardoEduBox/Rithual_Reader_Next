@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 
 // Firebase
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import {
   updateDoc,
   doc,
@@ -18,7 +18,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "@/app/firebase";
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 
 // tailwind ui
 import getFirebaseDocumentId from "../FirebaseDocumentId";

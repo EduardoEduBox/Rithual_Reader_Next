@@ -1,6 +1,6 @@
 "use client";
 
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 import Image from "next/image";
 
 const UserInfo = () => {

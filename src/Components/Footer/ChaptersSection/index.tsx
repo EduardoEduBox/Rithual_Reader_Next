@@ -3,7 +3,7 @@
 import React, { useState, useLayoutEffect, useEffect } from "react";
 import { MdOutlineClose } from "react-icons/md";
 import ChaptersNavegator from "./ChaptersNavegator";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 
 export type ChaptersSectionProps = {
   onClose?: () => void; // Optional prop

@@ -1,15 +1,12 @@
 import React, { useRef, useState, useMemo } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import gsap from "gsap";
 import Link from "next/link";
 import Loading from "@/app/caps/[id]/loading"; // Import the Loading component
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 
 interface HiddenDivProps {
   animateHiddenDiv: () => void;

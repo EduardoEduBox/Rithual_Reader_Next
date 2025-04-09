@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
-import { useLikes } from "@/app/Context/LikesContext";
-import { UseAuth } from "@/app/Context/AuthContext";
+import { useLikes } from "@/Context/LikesContext";
+import { UseAuth } from "@/Context/AuthContext";
 import LogInWarningModal from "./LogInWarningModal";
-import { formatNumber } from "@/app/Components/utils/numberFormatter";
+import { formatNumber } from "@/Components/utils/numberFormatter";
 
 interface LikeButtonProps {
   id: number;

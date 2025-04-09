@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LuEye } from "react-icons/lu";
-import Typewriter from "typewriter-effect";
+import { useFirstTime } from "@/Context/FirstTimeContent";
 import gsap from "gsap";
-import { useFirstTime } from "./Context/FirstTimeContent";
+import Typewriter from "typewriter-effect";
 
 const HomeLoading: React.FC = () => {
   const texts = ["Carregando.....", "Renderizando o universo.....", "Pronto!"];
@@ -50,7 +50,12 @@ const HomeLoading: React.FC = () => {
                   gsap.fromTo(
                     ref,
                     { opacity: 0, x: -30 },
-                    { opacity: 1, x: 0, delay: index * 0.2, ease: "power2.out" }
+                    {
+                      opacity: 1,
+                      x: 0,
+                      delay: index * 0.2,
+                      ease: "power2.out",
+                    },
                   );
                 });
                 setShowBetaInfo(true);
@@ -63,7 +68,7 @@ const HomeLoading: React.FC = () => {
                       y: 0,
                       delay: infoRefs.current.length * 0.2,
                       ease: "power2.out",
-                    }
+                    },
                   );
                 }
               },
@@ -128,7 +133,7 @@ const HomeLoading: React.FC = () => {
         >
           {!transitionStart && (
             <div className="flex flex-col items-center justify-center">
-              <LuEye className="text-white text-8xl lg:text-8xl animate-spin" />
+              <LuEye className="text-white text-7xl lg:text-8xl animate-spin" />
               <div className="mt-8 text-2xl font-semibold">
                 <Typewriter
                   options={{
@@ -177,7 +182,9 @@ const HomeLoading: React.FC = () => {
         >
           <div className="mt-8 text-center text-lg text-gray-300 space-y-2">
             <p
-              ref={(el) => (infoRefs.current[0] = el!)}
+              ref={(el) => {
+                infoRefs.current[0] = el!;
+              }}
               className="font-semibold mb-10 text-shadow"
             >
               O Reader ainda está em versão beta, várias funcionalidades ainda
@@ -186,25 +193,33 @@ const HomeLoading: React.FC = () => {
 
             <ul className="flex flex-col text-left gap-3 items-start px-7 list-disc">
               <li
-                ref={(el) => (infoRefs.current[1] = el!)}
+                ref={(el) => {
+                  infoRefs.current[1] = el!;
+                }}
                 className="text-shadow"
               >
                 Versão de desktop
               </li>
               <li
-                ref={(el) => (infoRefs.current[3] = el!)}
+                ref={(el) => {
+                  infoRefs.current[3] = el!;
+                }}
                 className="text-shadow"
               >
                 Responder comentários
               </li>
               <li
-                ref={(el) => (infoRefs.current[4] = el!)}
+                ref={(el) => {
+                  infoRefs.current[4] = el!;
+                }}
                 className="text-shadow"
               >
                 Sistema de notificações na aba de perfil
               </li>
               <li
-                ref={(el) => (infoRefs.current[5] = el!)}
+                ref={(el) => {
+                  infoRefs.current[5] = el!;
+                }}
                 className="text-shadow"
               >
                 Páginas animadas

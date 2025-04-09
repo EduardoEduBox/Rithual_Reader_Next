@@ -12,7 +12,7 @@ const Loading = () => {
       >
         <LuEye className="text-7xl text-neutral-200 animate-spin" />
         <p className="opacity-50">Carregando...</p>
-      </div>
+      </div>,
     );
   }
 

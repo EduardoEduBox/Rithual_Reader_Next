@@ -1,0 +1,33 @@
+body {
+  color: rgb(var(--color));
+  background: rgb(var(--background));
+  font-size: 25px;
+}
+
+.Navigation {
+  height: calc(100svh - 56px);
+}
+
+.ChaptersNavegator {
+  max-height: calc(100% - 3.78rem);
+}
+
+.MyFooter p {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5vw;
+  background: gray;
+}

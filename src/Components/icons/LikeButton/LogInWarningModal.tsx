@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 
 interface LogInWarningModalProps {
   isOpen: boolean;

@@ -1,4 +1,4 @@
-import { UseFirestore } from "@/app/Context/FirestoreContext";
+import { UseFirestore } from "@/Context/FirestoreContext";
 import { GoComment } from "react-icons/go";
 import { formatNumber } from "../utils/numberFormatter";
 

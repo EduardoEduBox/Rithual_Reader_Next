@@ -1,16 +1,16 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { UseFirestore } from "@/app/Context/FirestoreContext";
-import Navbar from "@/app/Components/NavBar";
-import Footer from "@/app/Components/Footer";
-import Input from "@/app/Components/Comments/Input";
-import Comments from "@/app/Components/Comments";
-import { useEffect, useState, useMemo } from "react";
-import Loading from "@/app/Components/Loading";
-import ChaptersSection from "@/app/Components/Footer/ChaptersSection";
+import Comments from "@/Components/Comments";
+import Input from "@/Components/Comments/Input";
+import Footer from "@/Components/Footer";
+import ChaptersSection from "@/Components/Footer/ChaptersSection";
+import Loading from "@/Components/Loading";
+import Navbar from "@/Components/NavBar";
+import { UseFirestore } from "@/Context/FirestoreContext";
+import Image from "next/image";
+import Link from "next/link";
 
 const Page = ({ params }: { params: { id: number } }) => {
   const { chapters, updateViews } = UseFirestore();
@@ -48,7 +48,7 @@ const Page = ({ params }: { params: { id: number } }) => {
     const localStorageKey = `chapter_${idConverted}_last_viewed`;
     const lastViewed = localStorage.getItem(localStorageKey);
     console.log(
-      `Last viewed timestamp for chapter ${idConverted}: ${lastViewed}`
+      `Last viewed timestamp for chapter ${idConverted}: ${lastViewed}`,
     );
   }, [idConverted]);
 

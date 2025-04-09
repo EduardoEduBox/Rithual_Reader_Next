@@ -5,7 +5,7 @@ import { FaEye } from "react-icons/fa";
 import { RiEyeCloseLine } from "react-icons/ri";
 import Navigation from "./Navigation";
 import Link from "next/link";
-import { UseAuth } from "@/app/Context/AuthContext";
+import { UseAuth } from "@/Context/AuthContext";
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);

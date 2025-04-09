@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { UseAuth } from "../Context/AuthContext";
-import { MdArrowBack } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
+import { MdArrowBack } from "react-icons/md";
+import { UseAuth } from "@/Context/AuthContext";
 
 const Profile = () => {
   const { user, handleSignOut } = UseAuth();
